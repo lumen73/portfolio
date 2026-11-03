@@ -1,0 +1,67 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+.output
+.vinxi
+.tanstack/**
+.nitro
+*.local
+
+# Wrangler / Cloudflare
+.wrangler/
+.vercel/
+.dev.vars
+.dev.vars.*
+coverage/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Secrets and local environment files; keep the safe example file
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Local working materials contain CVs, certificates, and source exports.
+# Keep only media explicitly imported by src/data/projectsData.js.
+/sources_informations/*
+!/sources_informations/ged-cover.png
+!/sources_informations/ged-list-desktop.png
+!/sources_informations/ged-list-mobile.png
+!/sources_informations/ged_good_portfolio.mp4
+!/sources_informations/localhost_td7_SportSpace_scorematch.php(Nest Hub Max).png
+!/sources_informations/localhost_td7_SportSpace_ajoutermatch.php(Nest Hub Max).png
+!/sources_informations/localhost_td7_SportSpace_index.php(iPhone 16 Pro Max).png
+!/sources_informations/localhost_td7_SportSpace_scorematch.php(iPhone 16 Pro Max).png
+!/sources_informations/sportspace_portfolio.mp4
+!/sources_informations/localhost_gitfich_tpgstock_(Nest Hub Max).png
+!/sources_informations/localhost_gitfich_tpgstock_(iPhone 16 Pro Max).png
+!/sources_informations/localhost_gitfich_tpgstock_galeriecategorie.php(Nest Hub Max).png
+!/sources_informations/localhost_gitfich_tpgstock_detailsarticle.php_id=2(Nest Hub Max).png
+!/sources_informations/tpgstock_portfolio.mp4
+!/sources_informations/localhost_td7_rgph5_index.php_route=villes(Nest Hub Max).png
+!/sources_informations/localhost_td7_rgph5_index.php_route=villes(Samsung Galaxy A55).png
+!/sources_informations/localhost_td7_rgph5_index.php_route=rapports(Nest Hub Max).png
+!/sources_informations/localhost_td7_rgph5_index.php_route=rapports(Samsung Galaxy A55).png
+!/sources_informations/rgph1_portfolio.mp4
+!/sources_informations/rgph5_portfolio.mp4
