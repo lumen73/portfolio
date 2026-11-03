@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Github, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import cvUrl from "../../../sources_informations/CV_Boris_Merveille_DOSSA.pdf";
+import cvUrl from "/CV_Boris_Merveille_DOSSA.pdf";
 
 const links = [
   { href: "#accueil", label: "Accueil" },
