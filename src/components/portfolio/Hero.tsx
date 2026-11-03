@@ -1,7 +1,7 @@
 import { ArrowRight, FileText, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "../../../sources_informations/Gemini_Generated_Image_81rj3081rj3081rj.png";
-import cvUrl from "../../../sources_informations/CV_Boris_Merveille_DOSSA.pdf";
+import heroImg from "/Gemini_Generated_Image_81rj3081rj3081rj.png";
+import cvUrl from "/CV_Boris_Merveille_DOSSA.pdf";
 
 export function Hero() {
   return (
