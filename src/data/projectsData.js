@@ -1,24 +1,25 @@
-import gedCover from "../../sources_informations/ged-cover.png";
-import gedDesktopList from "../../sources_informations/ged-list-desktop.png";
-import gedMobileList from "../../sources_informations/ged-list-mobile.png";
+import gedCover from "@/assets/ged-cover.webp";
+import gedDesktopList from "@/assets/ged-list-desktop.webp";
+import gedMobileList from "@/assets/ged-list-mobile.webp";
 import gedVideo from "../../sources_informations/ged_good_portfolio.mp4";
 
-import sportSpaceCover from "../../sources_informations/localhost_td7_SportSpace_scorematch.php(Nest Hub Max).png";
-import sportSpaceSchedule from "../../sources_informations/localhost_td7_SportSpace_ajoutermatch.php(Nest Hub Max).png";
-import sportSpaceTeams from "../../sources_informations/localhost_td7_SportSpace_index.php(iPhone 16 Pro Max).png";
-import sportSpaceScores from "../../sources_informations/localhost_td7_SportSpace_scorematch.php(iPhone 16 Pro Max).png";
+import sportSpaceCover from "@/assets/sportspace-cover.webp";
+import sportSpaceSchedule from "@/assets/sportspace-schedule.webp";
+import sportSpaceTeams from "@/assets/sportspace-teams.webp";
+import sportSpaceScores from "@/assets/sportspace-scores.webp";
 import sportSpaceVideo from "../../sources_informations/sportspace_portfolio.mp4";
 
-import tpgStockCover from "../../sources_informations/localhost_gitfich_tpgstock_(Nest Hub Max).png";
-import tpgStockMobile from "../../sources_informations/localhost_gitfich_tpgstock_(iPhone 16 Pro Max).png";
-import tpgStockCategories from "../../sources_informations/localhost_gitfich_tpgstock_galeriecategorie.php(Nest Hub Max).png";
-import tpgStockArticle from "../../sources_informations/localhost_gitfich_tpgstock_detailsarticle.php_id=2(Nest Hub Max).png";
+import tpgStockCover from "@/assets/tpgstock-cover.webp";
+import tpgStockMobile from "@/assets/tpgstock-mobile.webp";
+import tpgStockCategories from "@/assets/tpgstock-categories.webp";
+import tpgStockArticle from "@/assets/tpgstock-article.webp";
 import tpgStockVideo from "../../sources_informations/tpgstock_portfolio.mp4";
 
-import rgph5Cover from "../../sources_informations/localhost_td7_rgph5_index.php_route=villes(Nest Hub Max).png";
-import rgph5CitiesMobile from "../../sources_informations/localhost_td7_rgph5_index.php_route=villes(Samsung Galaxy A55).png";
-import rgph5Reports from "../../sources_informations/localhost_td7_rgph5_index.php_route=rapports(Nest Hub Max).png";
-import rgph5ReportsMobile from "../../sources_informations/localhost_td7_rgph5_index.php_route=rapports(Samsung Galaxy A55).png";
+import rgph5Cover from "@/assets/rgph5-cover.webp";
+import rgph5CitiesMobile from "@/assets/rgph5-cities-mobile.webp";
+import rgph5Reports from "@/assets/rgph5-reports.webp";
+import rgph5ReportsMobile from "@/assets/rgph5-reports-mobile.webp";
+import rgph1Poster from "@/assets/rgph1-poster.webp";
 import rgph1Video from "../../sources_informations/rgph1_portfolio.mp4";
 import rgph5Video from "../../sources_informations/rgph5_portfolio.mp4";
 
@@ -33,20 +34,32 @@ export const projectsData = [
     title: "GED",
     category: "Gestion documentaire",
     summary: "Retrouver, classer et suivre les documents dans un espace de gestion unique.",
-    problem:
-      "Les équipes ont besoin de retrouver une pièce par son nom, sa catégorie, son département et son niveau de visibilité.",
+    problem: "retrouver une pièce par son nom, sa catégorie et son département",
     techStack: ["PHP natif", "MySQL (PDO)", "Bootstrap"],
     security:
       "Sessions, CSRF, requêtes préparées et mots de passe hachés. Les PDF sont contrôlés (type, extension et taille ≤ 10 Mo) ; les nouveaux fichiers sont stockés par défaut hors du dossier public.",
     codeUrl: "https://github.com/lumen73/ged",
     media: {
       cover: gedCover,
+      coverWidth: 1280,
+      coverHeight: 800,
       coverAlt: "Écran de connexion de l'application GED",
       screenshots: [
-        { src: gedDesktopList, alt: "Liste des documents GED sur ordinateur" },
-        { src: gedMobileList, alt: "Liste des documents GED sur mobile" },
+        {
+          src: gedDesktopList,
+          width: 1280,
+          height: 800,
+          alt: "Liste des documents GED sur ordinateur",
+        },
+        {
+          src: gedMobileList,
+          width: 589,
+          height: 1280,
+          alt: "Liste des documents GED sur mobile",
+        },
       ],
       demoVideo: gedVideo,
+      poster: gedCover,
       note: "Captures d'une instance de démonstration.",
     },
   },
@@ -65,13 +78,31 @@ export const projectsData = [
     codeUrl: "https://github.com/lumen73/SportSpace",
     media: {
       cover: sportSpaceCover,
+      coverWidth: 1280,
+      coverHeight: 800,
       coverAlt: "Écran Sportspace des rencontres et résultats",
       screenshots: [
-        { src: sportSpaceSchedule, alt: "Programmation des rencontres dans Sportspace" },
-        { src: sportSpaceTeams, alt: "Vue mobile des équipes Sportspace" },
-        { src: sportSpaceScores, alt: "Vue mobile des scores Sportspace" },
+        {
+          src: sportSpaceSchedule,
+          width: 1280,
+          height: 800,
+          alt: "Programmation des rencontres dans Sportspace",
+        },
+        {
+          src: sportSpaceTeams,
+          width: 589,
+          height: 1280,
+          alt: "Vue mobile des équipes Sportspace",
+        },
+        {
+          src: sportSpaceScores,
+          width: 589,
+          height: 1280,
+          alt: "Vue mobile des scores Sportspace",
+        },
       ],
       demoVideo: sportSpaceVideo,
+      poster: sportSpaceCover,
       note: "Les équipes, dates et scores visibles dans les captures illustrent l'interface de démonstration.",
     },
   },
@@ -89,13 +120,31 @@ export const projectsData = [
     codeUrl: "https://github.com/lumen73/tpgstock",
     media: {
       cover: tpgStockCover,
+      coverWidth: 1280,
+      coverHeight: 800,
       coverAlt: "Vue d'ensemble du stock dans TPGStock",
       screenshots: [
-        { src: tpgStockMobile, alt: "Vue mobile de la gestion de stock TPGStock" },
-        { src: tpgStockCategories, alt: "Catalogue des articles par catégorie" },
-        { src: tpgStockArticle, alt: "Fiche détaillée d'un article" },
+        {
+          src: tpgStockMobile,
+          width: 589,
+          height: 1280,
+          alt: "Vue mobile de la gestion de stock TPGStock",
+        },
+        {
+          src: tpgStockCategories,
+          width: 1280,
+          height: 800,
+          alt: "Catalogue des articles par catégorie",
+        },
+        {
+          src: tpgStockArticle,
+          width: 1280,
+          height: 800,
+          alt: "Fiche détaillée d'un article",
+        },
       ],
       demoVideo: tpgStockVideo,
+      poster: tpgStockCover,
       note: "Les quantités affichées sont des données de démonstration, pas des résultats d'exploitation.",
     },
   },
@@ -124,7 +173,7 @@ export const projectsData = [
       {
         criterion: "Saisie",
         v1: "Une ville à la fois",
-        v5: "Saisie multiple, jusqu'à 50 villes par lot",
+        v5: "Saisie multiple par lot (jusqu'à 50 arrondissements)",
       },
       { criterion: "Sorties", v1: "Totaux à l'écran", v5: "Rapports et export CSV" },
       {
@@ -133,22 +182,8 @@ export const projectsData = [
         v5: "schema.sql, migrate.php, create_admin.php",
       },
     ],
+    // demoUrl is optional and currently has no value.
     versions: [
-      {
-        id: "rgph1",
-        label: "RGPH1 · Version initiale",
-        problem:
-          "La première version saisit les effectifs ville par ville et affiche les totaux à l'écran.",
-        features: "Scripts PHP à plat mêlant logique, SQL et HTML ; saisie d'une ville à la fois.",
-        security:
-          "Vulnérable à l'injection SQL : l'INSERT concatène directement les valeurs reçues par $_POST.",
-        techStack: ["PHP", "MySQL"],
-        codeUrl: "https://github.com/lumen73/rgph/commit/4196491a75c064301ec852c3c00c8c568e335a7b",
-        media: {
-          demoVideo: rgph1Video,
-          note: "Démo vidéo de la version initiale RGPH1.",
-        },
-      },
       {
         id: "rgph5",
         label: "RGPH5 · Évolution",
@@ -162,14 +197,48 @@ export const projectsData = [
         codeUrl: "https://github.com/lumen73/rgph/commit/ac5cd6abf3f33e951e9b75655e8b2e7d83ccc36d",
         media: {
           cover: rgph5Cover,
+          poster: rgph5Cover,
+          coverWidth: 1280,
+          coverHeight: 800,
           coverAlt: "Interface RGPH5 de gestion et de recherche des villes",
           screenshots: [
-            { src: rgph5CitiesMobile, alt: "Vue mobile de la gestion des villes RGPH5" },
-            { src: rgph5Reports, alt: "Tableau de bord des rapports RGPH5" },
-            { src: rgph5ReportsMobile, alt: "Vue mobile des indicateurs RGPH5" },
+            {
+              src: rgph5CitiesMobile,
+              width: 576,
+              height: 1280,
+              alt: "Vue mobile de la gestion des villes RGPH5",
+            },
+            {
+              src: rgph5Reports,
+              width: 1280,
+              height: 800,
+              alt: "Tableau de bord des rapports RGPH5",
+            },
+            {
+              src: rgph5ReportsMobile,
+              width: 576,
+              height: 1280,
+              alt: "Vue mobile des indicateurs RGPH5",
+            },
           ],
           demoVideo: rgph5Video,
           note: "Les effectifs affichés dans les captures sont des données de démonstration.",
+        },
+      },
+      {
+        id: "rgph1",
+        label: "RGPH1 · Version initiale",
+        problem:
+          "La première version saisit les effectifs ville par ville et affiche les totaux à l'écran.",
+        features: "Scripts PHP à plat mêlant logique, SQL et HTML ; saisie d'une ville à la fois.",
+        security:
+          "Vulnérable à l'injection SQL : l'INSERT concatène directement les valeurs reçues par $_POST.",
+        techStack: ["PHP", "MySQL"],
+        codeUrl: "https://github.com/lumen73/rgph/commit/4196491a75c064301ec852c3c00c8c568e335a7b",
+        media: {
+          demoVideo: rgph1Video,
+          poster: rgph1Poster,
+          note: "Démo vidéo de la version initiale RGPH1.",
         },
       },
     ],

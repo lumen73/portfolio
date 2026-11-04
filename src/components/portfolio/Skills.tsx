@@ -8,7 +8,7 @@ const groups = [
       "PHP 8 natif",
       "PDO / MySQL",
       "MVC maison",
-      "Bases de sécurité web",
+      "Sécurité web : CSRF, requêtes préparées, hachage des mots de passe, validation des fichiers téléversés",
       "JavaScript natif / AJAX",
       "Bootstrap",
       "Apache / WAMP",
@@ -22,8 +22,8 @@ const groups = [
   },
   {
     icon: Lightbulb,
-    title: "Notions",
-    skills: ["C#", "Java"],
+    title: "Notions (formation)",
+    skills: ["C#", "Java", "UML", "Merise"],
   },
 ];
 

@@ -1,13 +1,18 @@
 export interface ProjectScreenshot {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 }
 
 export interface ProjectMedia {
   cover?: string;
   coverAlt?: string;
+  coverWidth?: number;
+  coverHeight?: number;
   screenshots?: ProjectScreenshot[];
   demoVideo?: string;
+  poster?: string;
   note?: string;
 }
 
@@ -19,6 +24,7 @@ export interface ProjectVersion {
   security?: string;
   techStack: string[];
   codeUrl?: string;
+  demoUrl?: string;
   media: ProjectMedia;
 }
 
@@ -33,6 +39,7 @@ export interface ProjectData {
   techStack?: string[];
   comparison?: { criterion: string; v1: string; v5: string }[];
   codeUrl?: string;
+  demoUrl?: string;
   media?: ProjectMedia;
   versions?: ProjectVersion[];
 }

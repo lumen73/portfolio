@@ -1,8 +1,6 @@
-import { Mail, MapPin, MessageCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const email = "borisdossa1973@gmail.com";
-const whatsapp = "https://wa.me/2290153835553";
+import { contactInfo } from "@/data/contactInfo";
 
 export function Contact() {
   return (
@@ -27,34 +25,34 @@ export function Contact() {
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div className="space-y-3 text-sm text-muted-foreground">
               <a
-                href="mailto:borisdossa1973@gmail.com"
-                className="flex items-center gap-3 transition-smooth hover:text-foreground"
+                href={contactInfo.emailHref}
+                className="flex min-h-11 min-w-0 items-center gap-3 break-words transition-smooth hover:text-foreground"
               >
                 <Mail className="h-4 w-4 text-primary-glow" />
-                {email}
+                <span className="min-w-0 break-all">{contactInfo.email}</span>
               </a>
               <a
-                href="tel:+2290153835553"
-                className="flex items-center gap-3 transition-smooth hover:text-foreground"
+                href={contactInfo.telephoneHref}
+                className="flex min-h-11 min-w-0 items-center gap-3 break-words transition-smooth hover:text-foreground"
               >
-                <MessageCircle className="h-4 w-4 text-primary-glow" />
-                +229 01 53 83 55 53
+                <Phone className="h-4 w-4 shrink-0 text-primary-glow" />
+                {contactInfo.phoneDisplay}
               </a>
-              <p className="flex items-center gap-3">
+              <p className="flex min-w-0 items-center gap-3 break-words">
                 <MapPin className="h-4 w-4 text-primary-glow" />
                 Ouidah, Bénin
               </p>
             </div>
 
             <div className="flex w-full flex-col gap-3 sm:w-auto">
-              <Button asChild variant="hero" className="gap-2">
-                <a href="mailto:borisdossa1973@gmail.com?subject=Parlons%20de%20votre%20projet">
+              <Button asChild variant="hero" className="min-h-11 gap-2">
+                <a href={`${contactInfo.emailHref}?subject=Parlons%20de%20votre%20projet`}>
                   <Mail className="h-4 w-4" />
                   M'écrire
                 </a>
               </Button>
-              <Button asChild variant="outline" className="gap-2 border-border/60">
-                <a href={whatsapp} target="_blank" rel="noreferrer noopener">
+              <Button asChild variant="outline" className="min-h-11 gap-2 border-border/60">
+                <a href={contactInfo.whatsappHref} target="_blank" rel="noreferrer noopener">
                   <MessageCircle className="h-4 w-4" />
                   WhatsApp
                 </a>

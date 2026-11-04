@@ -6,7 +6,8 @@ const experience = [
     department: "Département des Systèmes d’Information",
     role: "Développeur Full-Stack · Stage professionnel",
     period: "Mars – mai 2025",
-    description: "Stage professionnel en développement d’applications web de gestion.",
+    description:
+      "Application web de gestion des cargaisons (Laravel, MySQL, JavaScript, Bootstrap), en cours de développement. Conception du back-end d'une application de gestion de projets.",
   },
   {
     organization: "GETECH (Gioveri Enterprise Technology), Cotonou",

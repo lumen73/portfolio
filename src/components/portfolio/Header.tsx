@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Github, Menu, X } from "lucide-react";
+import { Github, Menu, MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { contactInfo } from "@/data/contactInfo";
 import cvUrl from "/CV_Boris_Merveille_DOSSA.pdf";
 
 const links = [
   { href: "#accueil", label: "Accueil" },
+  { href: "#apropos", label: "Présentation" },
   { href: "#projets", label: "Projets" },
   { href: "#competences", label: "Compétences" },
   { href: "#parcours", label: "Parcours" },
@@ -49,14 +51,14 @@ export function Header() {
           LUM3N
         </a>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Navigation principale">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Navigation principale">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               aria-current={active === link.href ? "location" : undefined}
               className={cn(
-                "relative rounded-md px-4 py-2 text-sm transition-smooth",
+                "relative min-h-11 rounded-md px-3 py-2 text-sm transition-smooth",
                 active === link.href
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground",
@@ -70,12 +72,21 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center md:flex">
+        <div className="hidden items-center xl:flex">
+          <a
+            href={contactInfo.whatsappHref}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="mr-3 inline-flex min-h-11 items-center gap-2 rounded-md px-3 py-2 text-sm text-muted-foreground transition-smooth hover:text-foreground"
+          >
+            <MessageCircle className="h-4 w-4" />
+            WhatsApp
+          </a>
           <a
             href="https://github.com/lumen73"
             target="_blank"
             rel="noreferrer noopener"
-            className="mr-3 inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm text-muted-foreground transition-smooth hover:text-foreground"
+            className="mr-3 inline-flex min-h-11 items-center gap-2 rounded-md px-3 py-2 text-sm text-muted-foreground transition-smooth hover:text-foreground"
           >
             <Github className="h-4 w-4" />
             GitHub
@@ -84,18 +95,18 @@ export function Header() {
             href={cvUrl}
             target="_blank"
             rel="noreferrer noopener"
-            className="mr-3 rounded-md px-3 py-2 text-sm text-muted-foreground transition-smooth hover:text-foreground"
+            className="mr-3 min-h-11 rounded-md px-3 py-2 text-sm text-muted-foreground transition-smooth hover:text-foreground"
           >
             CV PDF
           </a>
-          <Button asChild size="sm" variant="hero">
+          <Button asChild size="sm" variant="hero" className="min-h-11">
             <a href="#contact">Parlons projet</a>
           </Button>
         </div>
 
         <button
           type="button"
-          className="rounded-md p-2 text-foreground md:hidden"
+          className="h-11 w-11 rounded-md p-0 text-foreground xl:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           aria-expanded={open}
@@ -108,7 +119,7 @@ export function Header() {
       {open && (
         <div
           id="mobile-navigation"
-          className="animate-fade-in border-t border-border/40 glass md:hidden"
+          className="animate-fade-in border-t border-border/40 glass xl:hidden"
         >
           <nav className="flex flex-col gap-1 px-6 py-4" aria-label="Navigation mobile">
             {links.map((link) => (
@@ -116,16 +127,26 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-sm text-muted-foreground transition-smooth hover:bg-muted/50 hover:text-foreground"
+                className="min-h-11 rounded-md px-3 py-3 text-sm text-muted-foreground transition-smooth hover:bg-muted/50 hover:text-foreground"
               >
                 {link.label}
               </a>
             ))}
             <a
+              href={contactInfo.whatsappHref}
+              target="_blank"
+              rel="noreferrer noopener"
+              onClick={() => setOpen(false)}
+              className="inline-flex min-h-11 items-center gap-2 rounded-md px-3 py-3 text-sm text-muted-foreground transition-smooth hover:bg-muted/50 hover:text-foreground"
+            >
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp
+            </a>
+            <a
               href={cvUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="rounded-md px-3 py-3 text-sm text-muted-foreground transition-smooth hover:bg-muted/50 hover:text-foreground"
+              className="min-h-11 rounded-md px-3 py-3 text-sm text-muted-foreground transition-smooth hover:bg-muted/50 hover:text-foreground"
             >
               CV PDF
             </a>
@@ -134,7 +155,7 @@ export function Header() {
               target="_blank"
               rel="noreferrer noopener"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center gap-2 rounded-md px-3 py-3 text-sm text-muted-foreground transition-smooth hover:bg-muted/50 hover:text-foreground"
+              className="inline-flex min-h-11 items-center gap-2 rounded-md px-3 py-3 text-sm text-muted-foreground transition-smooth hover:bg-muted/50 hover:text-foreground"
             >
               <Github className="h-4 w-4" />
               GitHub

@@ -7,7 +7,7 @@ import { projectsData } from "@/data/projectsData.js";
 
 type ProjectContentData = Pick<
   ProjectVersion,
-  "problem" | "features" | "security" | "techStack" | "media"
+  "problem" | "features" | "security" | "techStack" | "media" | "demoUrl"
 >;
 
 function ProjectMediaPreview({
@@ -27,6 +27,8 @@ function ProjectMediaPreview({
             <img
               src={media.cover}
               alt={media.coverAlt ?? `Capture d'écran de ${title}`}
+              width={media.coverWidth}
+              height={media.coverHeight}
               loading="lazy"
               className="aspect-video h-full w-full object-cover"
             />
@@ -34,6 +36,7 @@ function ProjectMediaPreview({
             <video
               controls
               preload="none"
+              poster={media.poster}
               aria-label={`Démo vidéo de ${title}`}
               className="aspect-video h-full w-full object-cover"
             >
@@ -60,6 +63,8 @@ function ProjectMediaPreview({
                 <img
                   src={screenshot.src}
                   alt={screenshot.alt}
+                  width={screenshot.width}
+                  height={screenshot.height}
                   loading="lazy"
                   className="aspect-video w-full bg-surface object-contain"
                 />
@@ -79,11 +84,13 @@ function ProjectDetails({
   title,
   content,
   codeUrl,
+  demoUrl,
   showPreview = true,
 }: {
   title: string;
   content: ProjectContentData;
   codeUrl?: string;
+  demoUrl?: string;
   showPreview?: boolean;
 }) {
   return (
@@ -144,6 +151,14 @@ function ProjectDetails({
             </a>
           </Button>
         )}
+        {demoUrl && (
+          <Button asChild size="sm" variant="outline" className="gap-2 border-border/60">
+            <a href={demoUrl} target="_blank" rel="noreferrer noopener">
+              <ExternalLink className="h-4 w-4" />
+              Tester la démo
+            </a>
+          </Button>
+        )}
         {codeUrl && (
           <Button asChild size="sm" variant="outline" className="gap-2 border-border/60">
             <a href={codeUrl} target="_blank" rel="noreferrer noopener">
@@ -166,7 +181,7 @@ function ProjectCard({ project }: { project: ProjectData }) {
   };
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-card shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elevated">
+    <article className="group relative min-w-0 overflow-hidden rounded-2xl border border-border/50 bg-gradient-card shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elevated">
       <div className="absolute inset-0 pointer-events-none bg-gradient-primary opacity-0 transition-smooth group-hover:opacity-10" />
 
       {!hasVersions && project.media?.cover && (
@@ -174,6 +189,8 @@ function ProjectCard({ project }: { project: ProjectData }) {
           <img
             src={project.media.cover}
             alt={project.media.coverAlt ?? `Capture d'écran de ${project.title}`}
+            width={project.media.coverWidth}
+            height={project.media.coverHeight}
             loading="lazy"
             className="h-full w-full object-cover transition-smooth group-hover:scale-105"
           />
@@ -250,6 +267,7 @@ function ProjectCard({ project }: { project: ProjectData }) {
                   title={`${project.title} ${version.label}`}
                   content={version}
                   codeUrl={version.codeUrl}
+                  demoUrl={version.demoUrl}
                 />
               )}
             </RgphVersionToggle>
@@ -266,6 +284,7 @@ function ProjectCard({ project }: { project: ProjectData }) {
               media: project.media,
             }}
             codeUrl={project.codeUrl}
+            demoUrl={project.demoUrl}
           />
         ) : null}
       </div>
@@ -292,7 +311,7 @@ export function Projects() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project, index) => (
             <div
               key={project.id}

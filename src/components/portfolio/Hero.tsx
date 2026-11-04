@@ -1,6 +1,7 @@
 import { ArrowRight, FileText, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "/Gemini_Generated_Image_81rj3081rj3081rj.png";
+import heroPortrait320 from "@/assets/hero-portrait-320.webp";
+import heroPortrait640 from "@/assets/hero-portrait-640.webp";
 import cvUrl from "/CV_Boris_Merveille_DOSSA.pdf";
 
 export function Hero() {
@@ -9,14 +10,14 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-hero" />
       <div className="pointer-events-none absolute -top-24 right-0 h-[500px] w-[500px] rounded-full bg-primary/20 blur-3xl animate-glow-pulse" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
-        <div className="animate-fade-up">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2">
+        <div className="min-w-0 animate-fade-up">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs text-muted-foreground glass">
             <Sparkles className="h-3.5 w-3.5 text-primary-glow" />
             LUM3N · Développeur web · Ouidah, Bénin
           </div>
 
-          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+          <h1 className="break-words text-balance text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-7xl">
             Développeur web full-stack junior : <span className="text-gradient">PHP, Laravel</span>
           </h1>
 
@@ -69,14 +70,16 @@ export function Hero() {
           </dl>
         </div>
 
-        <div className="relative animate-fade-up [animation-delay:120ms]">
+        <div className="relative min-w-0 animate-fade-up [animation-delay:120ms]">
           <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-30 blur-3xl animate-glow-pulse" />
           <div className="relative animate-float">
             <img
-              src={heroImg}
+              src={heroPortrait640}
+              srcSet={`${heroPortrait320} 320w, ${heroPortrait640} 640w`}
+              sizes="(max-width: 640px) 100vw, 50vw"
               alt="Portrait de marque LUM3N, développeur web"
-              width={1024}
-              height={1536}
+              width={640}
+              height={800}
               className="mx-auto w-full max-w-lg rounded-3xl shadow-elevated"
               fetchPriority="high"
             />

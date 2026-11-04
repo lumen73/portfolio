@@ -1,4 +1,5 @@
 import { Mail, MessageCircle } from "lucide-react";
+import { contactInfo } from "@/data/contactInfo";
 
 export function Footer() {
   return (
@@ -13,18 +14,18 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-2">
           <a
-            href="mailto:borisdossa1973@gmail.com"
+            href={contactInfo.emailHref}
             aria-label="Envoyer un e-mail à Mawuna Boris Merveille Dossa"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-smooth hover:bg-muted/60 hover:text-foreground"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-smooth hover:bg-muted/60 hover:text-foreground"
           >
             <Mail className="h-4 w-4" />
           </a>
           <a
-            href="https://wa.me/2290153835553"
+            href={contactInfo.whatsappHref}
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Contacter Mawuna Boris Merveille Dossa sur WhatsApp"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-smooth hover:bg-muted/60 hover:text-foreground"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-border/40 text-muted-foreground transition-smooth hover:bg-muted/60 hover:text-foreground"
           >
             <MessageCircle className="h-4 w-4" />
           </a>
