@@ -1,27 +1,27 @@
 import gedCover from "@/assets/ged-cover.webp";
 import gedDesktopList from "@/assets/ged-list-desktop.webp";
 import gedMobileList from "@/assets/ged-list-mobile.webp";
-import gedVideo from "../../sources_informations/ged_good_portfolio.mp4";
+import gedVideo from "../assets/ged-demo.mp4";
 
 import sportSpaceCover from "@/assets/sportspace-cover.webp";
 import sportSpaceSchedule from "@/assets/sportspace-schedule.webp";
 import sportSpaceTeams from "@/assets/sportspace-teams.webp";
 import sportSpaceScores from "@/assets/sportspace-scores.webp";
-import sportSpaceVideo from "../../sources_informations/sportspace_portfolio.mp4";
+import sportSpaceVideo from "../assets/sportspace-demo.mp4";
 
 import tpgStockCover from "@/assets/tpgstock-cover.webp";
 import tpgStockMobile from "@/assets/tpgstock-mobile.webp";
 import tpgStockCategories from "@/assets/tpgstock-categories.webp";
 import tpgStockArticle from "@/assets/tpgstock-article.webp";
-import tpgStockVideo from "../../sources_informations/tpgstock_portfolio.mp4";
+import tpgStockVideo from "../assets/tpgstock-demo.mp4";
 
 import rgph5Cover from "@/assets/rgph5-cover.webp";
 import rgph5CitiesMobile from "@/assets/rgph5-cities-mobile.webp";
 import rgph5Reports from "@/assets/rgph5-reports.webp";
 import rgph5ReportsMobile from "@/assets/rgph5-reports-mobile.webp";
 import rgph1Poster from "@/assets/rgph1-poster.webp";
-import rgph1Video from "../../sources_informations/rgph1_portfolio.mp4";
-import rgph5Video from "../../sources_informations/rgph5_portfolio.mp4";
+import rgph1Video from "../assets/rgph1-demo.mp4";
+import rgph5Video from "../assets/rgph5-demo.mp4";
 
 /**
  * Copywriting and media for the projects section.
