@@ -9,7 +9,7 @@ import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
-const SITE_URL = "https://portfolio-lum3n1.vercel.app";
+const SITE_URL = "https://merveille-dossa.vercel.app";
 const OG_IMAGE_URL = `${SITE_URL}/og-image.jpg`;
 
 export const Route = createFileRoute("/")({
