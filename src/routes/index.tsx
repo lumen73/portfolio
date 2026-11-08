@@ -7,7 +7,6 @@ import { About } from "@/components/portfolio/About";
 import { Experience } from "@/components/portfolio/Experience";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
-import { Toaster } from "@/components/ui/sonner";
 
 const SITE_URL = "https://merveille-dossa.vercel.app";
 const OG_IMAGE_URL = `${SITE_URL}/og-image.jpg`;
@@ -74,7 +73,6 @@ function Index() {
         <Contact />
       </main>
       <Footer />
-      <Toaster theme="dark" position="top-right" />
     </div>
   );
 }

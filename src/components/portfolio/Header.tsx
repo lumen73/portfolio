@@ -20,19 +20,47 @@ export function Header() {
   const [active, setActive] = useState("#accueil");
 
   useEffect(() => {
+    let scrollFrame = 0;
+    let activeObserver: IntersectionObserver | null = null;
+
+    const updateScrolled = () => {
+      scrollFrame = 0;
+      const nextScrolled = window.scrollY > 12;
+      setScrolled((current) => (current === nextScrolled ? current : nextScrolled));
+    };
     const onScroll = () => {
-      setScrolled(window.scrollY > 12);
-      const y = window.scrollY + 120;
+      if (scrollFrame === 0) scrollFrame = window.requestAnimationFrame(updateScrolled);
+    };
+    const observeActiveSection = () => {
+      activeObserver?.disconnect();
+      const line = 120;
+      const bottomMargin = Math.max(0, window.innerHeight - line - 1);
+      activeObserver = new IntersectionObserver(
+        (entries) => {
+          const section = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((left, right) => left.boundingClientRect.top - right.boundingClientRect.top)
+            .at(-1);
+          if (section) setActive(`#${section.target.id}`);
+        },
+        { rootMargin: `-${line}px 0px -${bottomMargin}px 0px` },
+      );
       for (const link of links) {
-        const element = document.querySelector(link.href) as HTMLElement | null;
-        if (element && element.offsetTop <= y && element.offsetTop + element.offsetHeight > y) {
-          setActive(link.href);
-        }
+        const section = document.querySelector(link.href);
+        if (section) activeObserver.observe(section);
       }
     };
-    onScroll();
+
+    updateScrolled();
+    observeActiveSection();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", observeActiveSection, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", observeActiveSection);
+      if (scrollFrame) window.cancelAnimationFrame(scrollFrame);
+      activeObserver?.disconnect();
+    };
   }, []);
 
   return (

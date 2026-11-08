@@ -7,6 +7,8 @@ export interface ProjectScreenshot {
 
 export interface ProjectMedia {
   cover?: string;
+  coverSrcSet?: string;
+  coverSizes?: string;
   coverAlt?: string;
   coverWidth?: number;
   coverHeight?: number;

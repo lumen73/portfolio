@@ -1,6 +1,8 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/space-grotesk";
+import interLatinFontUrl from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import spaceGroteskLatinFontUrl from "@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2?url";
 
 import appCss from "../styles.css?url";
 
@@ -35,6 +37,20 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      {
+        rel: "preload",
+        href: interLatinFontUrl,
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: spaceGroteskLatinFontUrl,
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
     ],

@@ -26,6 +26,8 @@ function ProjectMediaPreview({
           {media.cover ? (
             <img
               src={media.cover}
+              srcSet={media.coverSrcSet}
+              sizes={media.coverSizes}
               alt={media.coverAlt ?? `Capture d'écran de ${title}`}
               width={media.coverWidth}
               height={media.coverHeight}

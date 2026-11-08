@@ -180,3 +180,59 @@
     border: 1px solid oklch(0.40 0.05 262 / 0.3);
   }
 }
+
+#projets {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 4623.375px;
+}
+
+#competences {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 912px;
+}
+
+#apropos {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 841px;
+}
+
+#parcours {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 2218.5px;
+}
+
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 554px;
+}
+
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 80px;
+}
+
+@media (min-width: 768px) {
+  #projets {
+    contain-intrinsic-size: auto 2751.140625px;
+  }
+
+  #competences {
+    contain-intrinsic-size: auto 486px;
+  }
+
+  #apropos {
+    contain-intrinsic-size: auto 422px;
+  }
+
+  #parcours {
+    contain-intrinsic-size: auto 1384.75px;
+  }
+
+  #contact {
+    contain-intrinsic-size: auto 390px;
+  }
+
+  footer {
+    contain-intrinsic-size: auto 44px;
+  }
+}

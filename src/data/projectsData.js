@@ -1,15 +1,18 @@
 import gedCover from "@/assets/ged-cover.webp";
+import gedCover640 from "@/assets/ged-cover-640.webp";
 import gedDesktopList from "@/assets/ged-list-desktop.webp";
 import gedMobileList from "@/assets/ged-list-mobile.webp";
 import gedVideo from "../assets/ged-demo.mp4";
 
 import sportSpaceCover from "@/assets/sportspace-cover.webp";
+import sportSpaceCover640 from "@/assets/sportspace-cover-640.webp";
 import sportSpaceSchedule from "@/assets/sportspace-schedule.webp";
 import sportSpaceTeams from "@/assets/sportspace-teams.webp";
 import sportSpaceScores from "@/assets/sportspace-scores.webp";
 import sportSpaceVideo from "../assets/sportspace-demo.mp4";
 
 import tpgStockCover from "@/assets/tpgstock-cover.webp";
+import tpgStockCover640 from "@/assets/tpgstock-cover-640.webp";
 import tpgStockMobile from "@/assets/tpgstock-mobile.webp";
 import tpgStockCategories from "@/assets/tpgstock-categories.webp";
 import tpgStockArticle from "@/assets/tpgstock-article.webp";
@@ -41,6 +44,8 @@ export const projectsData = [
     codeUrl: "https://github.com/lumen73/ged",
     media: {
       cover: gedCover,
+      coverSrcSet: `${gedCover640} 640w, ${gedCover} 1280w`,
+      coverSizes: "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw",
       coverWidth: 1280,
       coverHeight: 800,
       coverAlt: "Écran de connexion de l'application GED",
@@ -78,6 +83,8 @@ export const projectsData = [
     codeUrl: "https://github.com/lumen73/SportSpace",
     media: {
       cover: sportSpaceCover,
+      coverSrcSet: `${sportSpaceCover640} 640w, ${sportSpaceCover} 1280w`,
+      coverSizes: "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw",
       coverWidth: 1280,
       coverHeight: 800,
       coverAlt: "Écran Sportspace des rencontres et résultats",
@@ -120,6 +127,8 @@ export const projectsData = [
     codeUrl: "https://github.com/lumen73/tpgstock",
     media: {
       cover: tpgStockCover,
+      coverSrcSet: `${tpgStockCover640} 640w, ${tpgStockCover} 1280w`,
+      coverSizes: "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw",
       coverWidth: 1280,
       coverHeight: 800,
       coverAlt: "Vue d'ensemble du stock dans TPGStock",
